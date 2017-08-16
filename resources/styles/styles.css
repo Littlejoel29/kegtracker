@@ -2,3 +2,21 @@
   background-image: url("http://media.istockphoto.com/vectors/beer-keg-vector-id165748567?k=6&m=165748567&s=170667a&w=0&h=U5fqJehXBoRStwfTM75DN_jnWOj5hsvv9qfKEv9FcUk=");
   background-size: auto;
 }*/
+
+#pint-button {
+height: 10%;
+width: 7%;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 2000px;
+}
+.image-wrapper p {
+    position: absolute;
+    left: 20;
+    top: 50;
+    width: 218px;
+    color: black;
+    margin: 5px;
+}

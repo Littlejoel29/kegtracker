@@ -9,9 +9,10 @@ import { Keg } from './keg.model';
       <h1>Keg Tracker</h1>
       <h3>{{subtitle}}</h3>
     </div>
-    <keg-list [childKegList] = "masterKegList" (clickSender)="editKeg($event)"></keg-list>
+    <keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></keg-list>
     <hr>
     <edit-keg [childSelectedKeg] = "selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
+    <pint-sold [childSelectedKeg] = "selectedKeg" (clickSender) = "subtractPint($event)"></pint-sold>
 
   </div>
   `
@@ -35,5 +36,7 @@ export class AppComponent {
   finishedEditing() {
     this.selectedKeg = null;
   }
-
+  subtractPint(clickedKeg) {
+    this.selectedKeg = clickedKeg;
+  }
 }

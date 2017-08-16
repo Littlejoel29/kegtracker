@@ -4,13 +4,15 @@ import { AppComponent }   from './app.component';
 import { FormsModule }    from '@angular/forms';
 import { KegListComponent} from './keg-list.component';
 import { EditKegComponent} from './edit-keg.component';
+import { PintSoldComponent } from './pint-sold.component';
 
 @NgModule({
   imports: [ BrowserModule,
               FormsModule ],
   declarations: [ AppComponent,
                   KegListComponent,
-                  EditKegComponent],
+                  EditKegComponent,
+                  PintSoldComponent],
   bootstrap: [ AppComponent ]
 })
 
