@@ -13,6 +13,7 @@ import { Keg } from './keg.model';
     <hr>
     <edit-keg [childSelectedKeg] = "selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
     <pint-sold [childSelectedKeg] = "selectedKeg" (clickSender) = "subtractPint($event)"></pint-sold>
+  
     <new-keg (newKegSender)="addKeg($event)"></new-keg>
 
   </div>

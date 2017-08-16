@@ -9,6 +9,7 @@ import { Keg } from './keg.model';
     <h4>{{childSelectedKeg.brand}}</h4>
     <label>Enter new price:</label>
     <input [(ngModel)]="childSelectedKeg.price" type="number">
+    <button (click)="refilleKegClicked(childSelectedKeg)">Refill Keg</button>
 
     <button (click)="doneButtonClicked()">Done</button>
   </div>
@@ -21,5 +22,8 @@ export class EditKegComponent {
 
   doneButtonClicked() {
     this.doneButtonClickedSender.emit();
+  }
+  refilleKegClicked(childSelectedKeg) {
+    childSelectedKeg.pints=124;
   }
 }
