@@ -27,7 +27,7 @@ export class KegListComponent {
     if (kegToSubtract.pints > 0) {
     kegToSubtract.pints -= 1;
   } else {
-    alert("you have no more pints dammit!");
+    alert("you have no more pints dammit!");            
   }
   }
   shortageColor(currentKeg) {
