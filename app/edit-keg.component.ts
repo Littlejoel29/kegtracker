@@ -8,7 +8,7 @@ import { Keg } from './keg.model';
     <h3>{{childSelectedKeg.name}} | <em>Alcohol Content: {{childSelectedKeg.alcoholContent}}</em></h3>
     <h4>{{childSelectedKeg.brand}}</h4>
     <label>Enter new price:</label>
-    <input [(ngModel)]="childSelectedKeg.price">
+    <input [(ngModel)]="childSelectedKeg.price" type="number">
 
     <button (click)="doneButtonClicked()">Done</button>
   </div>

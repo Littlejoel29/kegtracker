@@ -9,7 +9,7 @@ import { Keg } from './keg.model';
       <h1>Keg Tracker</h1>
       <h3>{{subtitle}}</h3>
     </div>
-    <keg-list [childKegList] = "masterKegList"></keg-list>
+    <keg-list [childKegList] = "masterKegList" (clickSender)="editKeg($event)"></keg-list>
     <hr>
     <edit-keg [childSelectedKeg] = "selectedKeg" (doneButtonClickedSender)="finishedEditing()"></edit-keg>
 
