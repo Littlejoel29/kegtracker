@@ -5,8 +5,14 @@ import { Keg } from './keg.model';
   selector: 'keg-list',
   template: `
 
+  <select (change)="onChange($event.target.value)">
+    <option value="allBeers" selected="selected">All Beers</option>
+    <option value="cheapBeers">Cheap Beers</option>
+    <option value="fancyBeers">Fancy Beers</option>
+  </select>
+
   <ul class="list-group">
-    <li [class]="shortageColor(currentKeg)" *ngFor="let currentKeg of childKegList">
+    <li [class]="shortageColor(currentKeg)" *ngFor="let currentKeg of childKegList | price:filterByPrice">
       <h4>{{currentKeg.name}}</h4>Price: <strong>$ {{currentKeg.price}}</strong>
       <h6>Pints Remaining: {{ currentKeg.pints }}</h6>
       <button (click)="editButtonHasBeenClicked(currentKeg)">Edit Keg</button>
@@ -20,6 +26,12 @@ export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
 
+  filterByPrice: string = "allBeers";
+
+  onChange(optionFromMenu) {
+    this.filterByPrice = optionFromMenu;
+  }
+
   editButtonHasBeenClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
@@ -27,7 +39,7 @@ export class KegListComponent {
     if (kegToSubtract.pints > 0) {
     kegToSubtract.pints -= 1;
   } else {
-    alert("you have no more pints dammit!");            
+    alert("you have no more pints dammit!");
   }
   }
   shortageColor(currentKeg) {
